@@ -6,7 +6,7 @@ This extension for vscode adds support for Loproc (**LO**w-level **PRO**cedural)
 
 - Color highlighting
 
-![highlight](images/highlight.jpg)
+![highlight](https://github.com/Lucinotion/LoprocLang-vscode-support/blob/main/images/highlight.jpg?raw=true)
 
 *Image taken using the theme One Dark Pro and the font FiraCode*
 
