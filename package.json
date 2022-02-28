@@ -1,0 +1,25 @@
+{
+    "name": "loproclang",
+    "displayName": "Loproclang",
+    "description": "Syntax highlighter for the Loproc language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "loproc",
+            "aliases": ["Loproc", "loproc"],
+            "extensions": [".lp"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "loproc",
+            "scopeName": "source.lp",
+            "path": "./syntaxes/loproc.tmLanguage.json"
+        }]
+    }
+}

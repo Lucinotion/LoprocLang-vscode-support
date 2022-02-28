@@ -1,0 +1,115 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Loproc",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#tags"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#syscalls"
+		}
+	],
+	"repository": {
+		"comments":{
+			"name": "comment",
+			"begin": "#",
+			"end": "$"
+		},
+		"variables":{
+			"name": "variable",
+			"patterns": [{
+				"name": "variable",
+				"match": "\\$.*?(?=[,;])"
+			},
+			{
+				"name": "variable",
+				"match": "(?<==>\\s+).*?(?=[,;])"
+			},
+			{
+				"name": "variable",
+				"match": "(?<=\\$\\s+).*?(?=[,;])"
+			}]
+		},
+		"functions":{
+			"name": "function",
+			"patterns": [{
+				"name": "entity.name.function",
+				"match": "\\w+(?={)"
+			},
+			{
+				"name": "variable.function",
+				"match": "\\(\\w*\\)"
+			}]
+		},
+		"tags":{
+			"name": "tag",
+			"patterns": [{
+				"name": "entity.name.class",
+				"match": "(?<=\\<)\\w+(?=\\>)"
+			},
+			{
+				"name": "entity.name.tag",
+				"match": ">\\w+<"
+			}]
+		},
+		"keywords":{
+			"name": "keyword",
+			"patterns": [{
+				"name": "keyword.control.loproc",
+				"match": "(=$|=>|\\?|:)(?=\\s)"
+			}]
+		},
+		"operators":{
+			"name":"keyword.operator.logical",
+			"patterns": [{
+				"name": "keyword.operator.logical",
+				"match": "(\\$|<|>|>=|<=|\\+|\\-|\/|%|\\*|\\*\\*|&|\\||\\^|<<|>>|&&|\\|\\|)(?=\\s)"
+			},
+			{
+				"name": "keyword.operator.logical",
+				"match": "\\+\\+|--|\\~|\\!"
+			}]
+		},
+		"strings":{
+			"name": "string.quoted.double.loproc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.loproc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants":{
+			"name": "constant",
+			"match": "([\\-\\+]?\\.?\\d+\\.?\\d*)|true|false"
+		},
+		"syscalls":{
+			"name": "keyword.control.import",
+			"match": "(?<=(^|[{;])\\s*)\\w+@?"
+		}
+	},
+	"scopeName": "source.lp"
+}
