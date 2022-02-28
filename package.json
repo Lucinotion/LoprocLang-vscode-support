@@ -1,7 +1,7 @@
 {
     "name": "loproclang",
     "displayName": "Loproclang",
-    "description": "Syntax highlighter for the Loproc language",
+    "description": "Loproc language support",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.64.0"
