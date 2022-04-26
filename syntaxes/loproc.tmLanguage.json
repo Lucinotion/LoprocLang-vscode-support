@@ -12,6 +12,9 @@
 			"include": "#variables"
 		},
 		{
+			"include": "#components"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -59,14 +62,21 @@
 			},
 			{
 				"name": "variable.function",
-				"match": "\\(\\w*\\)"
+				"match": "\\(\\w+\\)"
+			}]
+		},
+		"components":{
+			"name": "component",
+			"patterns": [{
+				"name": "entity.name.tag",
+				"match": "\\[\\w+\\]"
 			}]
 		},
 		"tags":{
 			"name": "tag",
 			"patterns": [{
 				"name": "entity.name.class",
-				"match": "(?<=\\<)\\w+(?=\\>)"
+				"match": "<\\w+\\>"
 			},
 			{
 				"name": "entity.name.tag",
@@ -77,7 +87,7 @@
 			"name": "keyword",
 			"patterns": [{
 				"name": "keyword.control.loproc",
-				"match": "(=$|=>|\\?|:)(?=\\s)"
+				"match": "(=\\$|=>|\\?|:)(?=\\s)"
 			}]
 		},
 		"operators":{
@@ -108,7 +118,7 @@
 		},
 		"syscalls":{
 			"name": "keyword.control.import",
-			"match": "(?<=(^|[{;])\\s*)\\w+@?"
+			"match": "(?<=(^|[{;\\]])\\s*)\\w+@?"
 		}
 	},
 	"scopeName": "source.lp"
